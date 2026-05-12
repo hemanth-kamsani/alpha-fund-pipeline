@@ -18,10 +18,10 @@ fraud detection, regulatory compliance
 - [x] Phase 1 — Trade data generator
 - [x] Phase 2 — S3 Bronze landing
 - [x] Phase 3 — AWS Glue Silver cleaning
-- [ ] Phase 4 — Great Expectations quality gates
-- [ ] Phase 5 — dbt Gold models
-- [ ] Phase 6 — Snowflake warehouse
-- [ ] Phase 7 — Airflow orchestration
+- [x] Phase 4 — Great Expectations quality gates
+- [x] Phase 5 — dbt Gold models
+- [x] Phase 6 — Snowflake warehouse
+- [x] Phase 7 — Airflow orchestration
 
 ## Author
 Hemanth Kamsani
