@@ -1,0 +1,899 @@
+[0m21:55:56.535015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b83490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c79710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c79d90>]}
+
+
+============================== 21:55:56.537238 | 433884fc-a596-44e5-b197-af718c991f73 ==============================
+[0m21:55:56.537238 [info ] [MainThread]: Running with dbt=1.11.9
+[0m21:55:56.537511 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'log_path': '/Users/hemanth/Desktop/alpha-fund-pipeline/dbt/logs', 'empty': 'False', 'introspect': 'True', 'invocation_command': 'dbt run', 'log_cache_events': 'False', 'partial_parse': 'True', 'no_print': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'version_check': 'True', 'debug': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'warn_error': 'None', 'profiles_dir': '/Users/hemanth/.dbt', 'indirect_selection': 'eager'}
+[0m21:55:56.681711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c0a590>]}
+[0m21:55:56.703983 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x101efd990>]}
+[0m21:55:56.705163 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m21:55:56.755754 [debug] [MainThread]: checksum: f8bb6a62265c70f2530bed05e52c2cee1c1844b101d398a67d5798350ab914c5, vars: {}, profile: , target: , version: 1.11.9
+[0m21:55:56.756123 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m21:55:56.756310 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104cd9dd0>]}
+[0m21:55:57.321500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105572e10>]}
+[0m21:55:57.360669 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/manifest.json
+[0m21:55:57.361645 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/semantic_manifest.json
+[0m21:55:57.367307 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1055d12d0>]}
+[0m21:55:57.367511 [info ] [MainThread]: Found 5 models, 4 data tests, 1 source, 477 macros
+[0m21:55:57.367659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e0ec50>]}
+[0m21:55:57.368469 [info ] [MainThread]: 
+[0m21:55:57.368611 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:55:57.368726 [info ] [MainThread]: 
+[0m21:55:57.368919 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:55:57.370912 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_alpha_fund'
+[0m21:55:57.397318 [debug] [ThreadPool]: Using duckdb connection "list_alpha_fund"
+[0m21:55:57.397530 [debug] [ThreadPool]: On list_alpha_fund: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "list_alpha_fund"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"alpha_fund"'
+    
+  
+  
+[0m21:55:57.397673 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:55:57.414813 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m21:55:57.415450 [debug] [ThreadPool]: On list_alpha_fund: Close
+[0m21:55:57.415729 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_alpha_fund, now create_alpha_fund_main)
+[0m21:55:57.415905 [debug] [ThreadPool]: Creating schema "database: "alpha_fund"
+schema: "main"
+"
+[0m21:55:57.418725 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:55:57.418884 [debug] [ThreadPool]: On create_alpha_fund_main: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "create_alpha_fund_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='alpha_fund'
+        and type='sqlite'
+    
+  
+[0m21:55:57.419003 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:55:57.419607 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:55:57.420106 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:55:57.420219 [debug] [ThreadPool]: On create_alpha_fund_main: BEGIN
+[0m21:55:57.420381 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:55:57.420497 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:55:57.420616 [debug] [ThreadPool]: On create_alpha_fund_main: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "create_alpha_fund_main"} */
+
+    
+    
+        create schema if not exists "alpha_fund"."main"
+    
+[0m21:55:57.420802 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:55:57.421095 [debug] [ThreadPool]: On create_alpha_fund_main: COMMIT
+[0m21:55:57.421205 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:55:57.421307 [debug] [ThreadPool]: On create_alpha_fund_main: COMMIT
+[0m21:55:57.421462 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:55:57.421579 [debug] [ThreadPool]: On create_alpha_fund_main: Close
+[0m21:55:57.422110 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_alpha_fund_main, now list_alpha_fund_main)
+[0m21:55:57.424215 [debug] [ThreadPool]: Using duckdb connection "list_alpha_fund_main"
+[0m21:55:57.424328 [debug] [ThreadPool]: On list_alpha_fund_main: BEGIN
+[0m21:55:57.424424 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:55:57.424622 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:55:57.424733 [debug] [ThreadPool]: Using duckdb connection "list_alpha_fund_main"
+[0m21:55:57.424857 [debug] [ThreadPool]: On list_alpha_fund_main: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "list_alpha_fund_main"} */
+select
+      'alpha_fund' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'alpha_fund'
+  
+[0m21:55:57.426535 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m21:55:57.426966 [debug] [ThreadPool]: On list_alpha_fund_main: ROLLBACK
+[0m21:55:57.427490 [debug] [ThreadPool]: Failed to rollback 'list_alpha_fund_main'
+[0m21:55:57.427610 [debug] [ThreadPool]: On list_alpha_fund_main: Close
+[0m21:55:57.427815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10551ee90>]}
+[0m21:55:57.428027 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:55:57.428140 [debug] [MainThread]: On master: BEGIN
+[0m21:55:57.428240 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:55:57.428456 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:55:57.428575 [debug] [MainThread]: On master: COMMIT
+[0m21:55:57.428686 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:55:57.428798 [debug] [MainThread]: On master: COMMIT
+[0m21:55:57.428956 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:55:57.429070 [debug] [MainThread]: On master: Close
+[0m21:55:57.431449 [debug] [Thread-1 (]: Began running node model.alpha_fund.gold_fraud_signals
+[0m21:55:57.431663 [info ] [Thread-1 (]: 1 of 5 START sql table model main.gold_fraud_signals ........................... [RUN]
+[0m21:55:57.431837 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_alpha_fund_main, now model.alpha_fund.gold_fraud_signals)
+[0m21:55:57.431981 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.gold_fraud_signals
+[0m21:55:57.435496 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.gold_fraud_signals"
+[0m21:55:57.435938 [debug] [Thread-1 (]: Began executing node model.alpha_fund.gold_fraud_signals
+[0m21:55:57.448935 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.gold_fraud_signals"
+[0m21:55:57.449489 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_fraud_signals"
+[0m21:55:57.449635 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: BEGIN
+[0m21:55:57.449766 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:55:57.450059 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.450192 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_fraud_signals"
+[0m21:55:57.450347 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_fraud_signals"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_fraud_signals__dbt_tmp"
+  
+    as (
+      -- Gold table 2: Fraud signals feed
+-- All high risk trades for the risk team
+-- Refreshed hourly -- SLA: risk team investigates within 2 hours
+
+SELECT
+    trade_id,
+    fund_id,
+    ticker,
+    action,
+    shares,
+    price_per_share,
+    total_value,
+    trader_id,
+    broker,
+    execution_time,
+    fraud_score,
+    fraud_flag,
+    risk_category,
+    CASE
+        WHEN fraud_score >= 90 THEN 'CRITICAL'
+        WHEN fraud_score >= 75 THEN 'HIGH'
+        WHEN fraud_score >= 40 THEN 'MEDIUM'
+        ELSE 'LOW'
+    END                           AS alert_level,
+    CURRENT_TIMESTAMP             AS flagged_at
+FROM "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb"."silver"."trades"
+WHERE fraud_score >= 40
+ORDER BY fraud_score DESC
+    );
+  
+  
+[0m21:55:57.452914 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.453078 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_fraud_signals"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_fraud_signals__dbt_tmp"
+  
+    as (
+      -- Gold table 2: Fraud signals feed
+-- All high risk trades for the risk team
+-- Refreshed hourly -- SLA: risk team investigates within 2 hours
+
+SELECT
+    trade_id,
+    fund_id,
+    ticker,
+    action,
+    shares,
+    price_per_share,
+    total_value,
+    trader_id,
+    broker,
+    execution_time,
+    fraud_score,
+    fraud_flag,
+    risk_category,
+    CASE
+        WHEN fraud_score >= 90 THEN 'CRITICAL'
+        WHEN fraud_score >= 75 THEN 'HIGH'
+        WHEN fraud_score >= 40 THEN 'MEDIUM'
+        ELSE 'LOW'
+    END                           AS alert_level,
+    CURRENT_TIMESTAMP             AS flagged_at
+FROM "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb"."silver"."trades"
+WHERE fraud_score >= 40
+ORDER BY fraud_score DESC
+    );
+  
+  
+[0m21:55:57.453231 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m21:55:57.453353 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: ROLLBACK
+[0m21:55:57.454304 [debug] [Thread-1 (]: Failed to rollback 'model.alpha_fund.gold_fraud_signals'
+[0m21:55:57.454503 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: Close
+[0m21:55:57.458337 [debug] [Thread-1 (]: Runtime Error in model gold_fraud_signals (models/gold/gold_fraud_signals.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.459175 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ab44d0>]}
+[0m21:55:57.459427 [error] [Thread-1 (]: 1 of 5 ERROR creating sql table model main.gold_fraud_signals .................. [[31mERROR[0m in 0.03s]
+[0m21:55:57.459660 [debug] [Thread-1 (]: Finished running node model.alpha_fund.gold_fraud_signals
+[0m21:55:57.459821 [debug] [Thread-1 (]: Began running node model.alpha_fund.gold_portfolio_summary
+[0m21:55:57.460001 [debug] [Thread-4 (]: Marking all children of 'model.alpha_fund.gold_fraud_signals' to be skipped because of status 'error'.  Reason: Runtime Error in model gold_fraud_signals (models/gold/gold_fraud_signals.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!.
+[0m21:55:57.460188 [info ] [Thread-1 (]: 2 of 5 START sql table model main.gold_portfolio_summary ....................... [RUN]
+[0m21:55:57.460647 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.alpha_fund.gold_fraud_signals, now model.alpha_fund.gold_portfolio_summary)
+[0m21:55:57.460801 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.gold_portfolio_summary
+[0m21:55:57.462077 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.gold_portfolio_summary"
+[0m21:55:57.462379 [debug] [Thread-1 (]: Began executing node model.alpha_fund.gold_portfolio_summary
+[0m21:55:57.463664 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.gold_portfolio_summary"
+[0m21:55:57.463953 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_portfolio_summary"
+[0m21:55:57.464091 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: BEGIN
+[0m21:55:57.464220 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:55:57.464512 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.464669 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_portfolio_summary"
+[0m21:55:57.464843 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_portfolio_summary"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_portfolio_summary__dbt_tmp"
+  
+    as (
+      -- Gold table 1: Portfolio summary
+-- Shows daily portfolio value, AUM, and concentration per stock
+-- Finance team queries this every morning for NAV calculation
+
+SELECT
+    fund_id,
+    fund_name,
+    ticker,
+    action,
+    COUNT(*)                          AS total_trades,
+    SUM(shares)                       AS total_shares,
+    AVG(price_per_share)              AS avg_price,
+    SUM(total_value)                  AS total_value,
+    SUM(SUM(total_value)) OVER ()     AS total_aum,
+    ROUND(
+        SUM(total_value) * 100.0 /
+        SUM(SUM(total_value)) OVER (), 2
+    )                                 AS concentration_pct,
+    CASE
+        WHEN ROUND(
+            SUM(total_value) * 100.0 /
+            SUM(SUM(total_value)) OVER (), 2
+        ) >= 8 THEN 'APPROACHING LIMIT'
+        ELSE 'WITHIN LIMIT'
+    END                               AS regulatory_status,
+    CURRENT_TIMESTAMP                 AS calculated_at
+FROM "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb"."silver"."trades"
+GROUP BY fund_id, fund_name, ticker, action
+ORDER BY total_value DESC
+    );
+  
+  
+[0m21:55:57.465811 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.466005 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_portfolio_summary"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_portfolio_summary__dbt_tmp"
+  
+    as (
+      -- Gold table 1: Portfolio summary
+-- Shows daily portfolio value, AUM, and concentration per stock
+-- Finance team queries this every morning for NAV calculation
+
+SELECT
+    fund_id,
+    fund_name,
+    ticker,
+    action,
+    COUNT(*)                          AS total_trades,
+    SUM(shares)                       AS total_shares,
+    AVG(price_per_share)              AS avg_price,
+    SUM(total_value)                  AS total_value,
+    SUM(SUM(total_value)) OVER ()     AS total_aum,
+    ROUND(
+        SUM(total_value) * 100.0 /
+        SUM(SUM(total_value)) OVER (), 2
+    )                                 AS concentration_pct,
+    CASE
+        WHEN ROUND(
+            SUM(total_value) * 100.0 /
+            SUM(SUM(total_value)) OVER (), 2
+        ) >= 8 THEN 'APPROACHING LIMIT'
+        ELSE 'WITHIN LIMIT'
+    END                               AS regulatory_status,
+    CURRENT_TIMESTAMP                 AS calculated_at
+FROM "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb"."silver"."trades"
+GROUP BY fund_id, fund_name, ticker, action
+ORDER BY total_value DESC
+    );
+  
+  
+[0m21:55:57.466187 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m21:55:57.466307 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: ROLLBACK
+[0m21:55:57.466570 [debug] [Thread-1 (]: Failed to rollback 'model.alpha_fund.gold_portfolio_summary'
+[0m21:55:57.466745 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: Close
+[0m21:55:57.467754 [debug] [Thread-1 (]: Runtime Error in model gold_portfolio_summary (models/gold/gold_portfolio_summary.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.467921 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105beadd0>]}
+[0m21:55:57.468131 [error] [Thread-1 (]: 2 of 5 ERROR creating sql table model main.gold_portfolio_summary .............. [[31mERROR[0m in 0.01s]
+[0m21:55:57.468343 [debug] [Thread-1 (]: Finished running node model.alpha_fund.gold_portfolio_summary
+[0m21:55:57.468493 [debug] [Thread-1 (]: Began running node model.alpha_fund.gold_trade_volume
+[0m21:55:57.468656 [debug] [Thread-4 (]: Marking all children of 'model.alpha_fund.gold_portfolio_summary' to be skipped because of status 'error'.  Reason: Runtime Error in model gold_portfolio_summary (models/gold/gold_portfolio_summary.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!.
+[0m21:55:57.468831 [info ] [Thread-1 (]: 3 of 5 START sql table model main.gold_trade_volume ............................ [RUN]
+[0m21:55:57.469071 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.alpha_fund.gold_portfolio_summary, now model.alpha_fund.gold_trade_volume)
+[0m21:55:57.469224 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.gold_trade_volume
+[0m21:55:57.470423 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.gold_trade_volume"
+[0m21:55:57.470706 [debug] [Thread-1 (]: Began executing node model.alpha_fund.gold_trade_volume
+[0m21:55:57.472005 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.gold_trade_volume"
+[0m21:55:57.472276 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_trade_volume"
+[0m21:55:57.472414 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: BEGIN
+[0m21:55:57.472544 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:55:57.473079 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:55:57.473248 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_trade_volume"
+[0m21:55:57.473430 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_trade_volume"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_trade_volume__dbt_tmp"
+  
+    as (
+      -- Gold table 3: Daily trade volume by ticker
+-- Used by fund manager and BA for portfolio analysis
+
+SELECT
+    ticker,
+    action,
+    COUNT(*)                AS trade_count,
+    SUM(shares)             AS total_shares,
+    SUM(total_value)        AS total_value,
+    AVG(price_per_share)    AS avg_price,
+    MIN(price_per_share)    AS min_price,
+    MAX(price_per_share)    AS max_price,
+    SUM(CASE WHEN action = 'BUY'
+        THEN total_value ELSE 0 END)  AS buy_value,
+    SUM(CASE WHEN action = 'SELL'
+        THEN total_value ELSE 0 END)  AS sell_value,
+    CURRENT_TIMESTAMP       AS calculated_at
+FROM "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb"."silver"."trades"
+GROUP BY ticker, action
+ORDER BY total_value DESC
+    );
+  
+  
+[0m21:55:57.473852 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.474028 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_trade_volume"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_trade_volume__dbt_tmp"
+  
+    as (
+      -- Gold table 3: Daily trade volume by ticker
+-- Used by fund manager and BA for portfolio analysis
+
+SELECT
+    ticker,
+    action,
+    COUNT(*)                AS trade_count,
+    SUM(shares)             AS total_shares,
+    SUM(total_value)        AS total_value,
+    AVG(price_per_share)    AS avg_price,
+    MIN(price_per_share)    AS min_price,
+    MAX(price_per_share)    AS max_price,
+    SUM(CASE WHEN action = 'BUY'
+        THEN total_value ELSE 0 END)  AS buy_value,
+    SUM(CASE WHEN action = 'SELL'
+        THEN total_value ELSE 0 END)  AS sell_value,
+    CURRENT_TIMESTAMP       AS calculated_at
+FROM "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb"."silver"."trades"
+GROUP BY ticker, action
+ORDER BY total_value DESC
+    );
+  
+  
+[0m21:55:57.474264 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m21:55:57.474419 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: ROLLBACK
+[0m21:55:57.474767 [debug] [Thread-1 (]: Failed to rollback 'model.alpha_fund.gold_trade_volume'
+[0m21:55:57.474962 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: Close
+[0m21:55:57.476059 [debug] [Thread-1 (]: Runtime Error in model gold_trade_volume (models/gold/gold_trade_volume.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.476264 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b60250>]}
+[0m21:55:57.476525 [error] [Thread-1 (]: 3 of 5 ERROR creating sql table model main.gold_trade_volume ................... [[31mERROR[0m in 0.01s]
+[0m21:55:57.476750 [debug] [Thread-1 (]: Finished running node model.alpha_fund.gold_trade_volume
+[0m21:55:57.476911 [debug] [Thread-1 (]: Began running node model.alpha_fund.my_first_dbt_model
+[0m21:55:57.477092 [debug] [Thread-4 (]: Marking all children of 'model.alpha_fund.gold_trade_volume' to be skipped because of status 'error'.  Reason: Runtime Error in model gold_trade_volume (models/gold/gold_trade_volume.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!.
+[0m21:55:57.477300 [info ] [Thread-1 (]: 4 of 5 START sql table model main.my_first_dbt_model ........................... [RUN]
+[0m21:55:57.477551 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.alpha_fund.gold_trade_volume, now model.alpha_fund.my_first_dbt_model)
+[0m21:55:57.477729 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.my_first_dbt_model
+[0m21:55:57.478910 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.my_first_dbt_model"
+[0m21:55:57.479271 [debug] [Thread-1 (]: Began executing node model.alpha_fund.my_first_dbt_model
+[0m21:55:57.480648 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.my_first_dbt_model"
+[0m21:55:57.480980 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_first_dbt_model"
+[0m21:55:57.481124 [debug] [Thread-1 (]: On model.alpha_fund.my_first_dbt_model: BEGIN
+[0m21:55:57.481252 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:55:57.481545 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.481683 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_first_dbt_model"
+[0m21:55:57.481843 [debug] [Thread-1 (]: On model.alpha_fund.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.my_first_dbt_model"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."my_first_dbt_model__dbt_tmp"
+  
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    );
+  
+  
+[0m21:55:57.483546 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m21:55:57.486620 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_first_dbt_model"
+[0m21:55:57.486822 [debug] [Thread-1 (]: On model.alpha_fund.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.my_first_dbt_model"} */
+alter table "alpha_fund"."main"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+[0m21:55:57.487904 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:55:57.494698 [debug] [Thread-1 (]: On model.alpha_fund.my_first_dbt_model: COMMIT
+[0m21:55:57.494867 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_first_dbt_model"
+[0m21:55:57.495001 [debug] [Thread-1 (]: On model.alpha_fund.my_first_dbt_model: COMMIT
+[0m21:55:57.495827 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:55:57.530116 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_first_dbt_model"
+[0m21:55:57.530354 [debug] [Thread-1 (]: On model.alpha_fund.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.my_first_dbt_model"} */
+
+      drop table if exists "alpha_fund"."main"."my_first_dbt_model__dbt_backup" cascade
+    
+[0m21:55:57.530672 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.531650 [debug] [Thread-1 (]: On model.alpha_fund.my_first_dbt_model: Close
+[0m21:55:57.531902 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c3af90>]}
+[0m21:55:57.532181 [info ] [Thread-1 (]: 4 of 5 OK created sql table model main.my_first_dbt_model ...................... [[32mOK[0m in 0.05s]
+[0m21:55:57.532417 [debug] [Thread-1 (]: Finished running node model.alpha_fund.my_first_dbt_model
+[0m21:55:57.532745 [debug] [Thread-1 (]: Began running node model.alpha_fund.my_second_dbt_model
+[0m21:55:57.532969 [info ] [Thread-1 (]: 5 of 5 START sql view model main.my_second_dbt_model ........................... [RUN]
+[0m21:55:57.533142 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.alpha_fund.my_first_dbt_model, now model.alpha_fund.my_second_dbt_model)
+[0m21:55:57.533281 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.my_second_dbt_model
+[0m21:55:57.534414 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.my_second_dbt_model"
+[0m21:55:57.534745 [debug] [Thread-1 (]: Began executing node model.alpha_fund.my_second_dbt_model
+[0m21:55:57.541830 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.my_second_dbt_model"
+[0m21:55:57.542178 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_second_dbt_model"
+[0m21:55:57.542316 [debug] [Thread-1 (]: On model.alpha_fund.my_second_dbt_model: BEGIN
+[0m21:55:57.542443 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:55:57.542716 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.542854 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_second_dbt_model"
+[0m21:55:57.542999 [debug] [Thread-1 (]: On model.alpha_fund.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.my_second_dbt_model"} */
+
+  
+  create view "alpha_fund"."main"."my_second_dbt_model__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "alpha_fund"."main"."my_first_dbt_model"
+where id = 1
+  );
+
+[0m21:55:57.543302 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.544540 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_second_dbt_model"
+[0m21:55:57.544685 [debug] [Thread-1 (]: On model.alpha_fund.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.my_second_dbt_model"} */
+alter view "alpha_fund"."main"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+[0m21:55:57.545262 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.545769 [debug] [Thread-1 (]: On model.alpha_fund.my_second_dbt_model: COMMIT
+[0m21:55:57.545915 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_second_dbt_model"
+[0m21:55:57.546043 [debug] [Thread-1 (]: On model.alpha_fund.my_second_dbt_model: COMMIT
+[0m21:55:57.546373 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.547335 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.my_second_dbt_model"
+[0m21:55:57.547489 [debug] [Thread-1 (]: On model.alpha_fund.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.my_second_dbt_model"} */
+
+      drop view if exists "alpha_fund"."main"."my_second_dbt_model__dbt_backup" cascade
+    
+[0m21:55:57.547704 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:55:57.548154 [debug] [Thread-1 (]: On model.alpha_fund.my_second_dbt_model: Close
+[0m21:55:57.548379 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '433884fc-a596-44e5-b197-af718c991f73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c38650>]}
+[0m21:55:57.548631 [info ] [Thread-1 (]: 5 of 5 OK created sql view model main.my_second_dbt_model ...................... [[32mOK[0m in 0.02s]
+[0m21:55:57.548854 [debug] [Thread-1 (]: Finished running node model.alpha_fund.my_second_dbt_model
+[0m21:55:57.549298 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:55:57.549435 [debug] [MainThread]: On master: BEGIN
+[0m21:55:57.549555 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:55:57.549768 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:55:57.549885 [debug] [MainThread]: On master: COMMIT
+[0m21:55:57.549999 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:55:57.550107 [debug] [MainThread]: On master: COMMIT
+[0m21:55:57.550267 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:55:57.550377 [debug] [MainThread]: On master: Close
+[0m21:55:57.550522 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:55:57.550634 [debug] [MainThread]: Connection 'model.alpha_fund.my_second_dbt_model' was properly closed.
+[0m21:55:57.550785 [info ] [MainThread]: 
+[0m21:55:57.550917 [info ] [MainThread]: Finished running 4 table models, 1 view model in 0 hours 0 minutes and 0.18 seconds (0.18s).
+[0m21:55:57.551358 [debug] [MainThread]: Command end result
+[0m21:55:57.565944 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/manifest.json
+[0m21:55:57.566832 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/semantic_manifest.json
+[0m21:55:57.569239 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/run_results.json
+[0m21:55:57.569387 [info ] [MainThread]: 
+[0m21:55:57.569559 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m21:55:57.569686 [info ] [MainThread]: 
+[0m21:55:57.569840 [error] [MainThread]: [31mFailure in model gold_fraud_signals (models/gold/gold_fraud_signals.sql)[0m
+[0m21:55:57.569991 [error] [MainThread]:   Runtime Error in model gold_fraud_signals (models/gold/gold_fraud_signals.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.570105 [info ] [MainThread]: 
+[0m21:55:57.570239 [info ] [MainThread]:   compiled code at target/compiled/alpha_fund/models/gold/gold_fraud_signals.sql
+[0m21:55:57.570354 [info ] [MainThread]: 
+[0m21:55:57.570492 [error] [MainThread]: [31mFailure in model gold_portfolio_summary (models/gold/gold_portfolio_summary.sql)[0m
+[0m21:55:57.570635 [error] [MainThread]:   Runtime Error in model gold_portfolio_summary (models/gold/gold_portfolio_summary.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.570748 [info ] [MainThread]: 
+[0m21:55:57.570880 [info ] [MainThread]:   compiled code at target/compiled/alpha_fund/models/gold/gold_portfolio_summary.sql
+[0m21:55:57.570994 [info ] [MainThread]: 
+[0m21:55:57.571129 [error] [MainThread]: [31mFailure in model gold_trade_volume (models/gold/gold_trade_volume.sql)[0m
+[0m21:55:57.571269 [error] [MainThread]:   Runtime Error in model gold_trade_volume (models/gold/gold_trade_volume.sql)
+  Binder Error: Catalog "/Users/hemanth/Desktop/alpha-fund-pipeline/data/alpha_fund.duckdb" does not exist!
+[0m21:55:57.571381 [info ] [MainThread]: 
+[0m21:55:57.571512 [info ] [MainThread]:   compiled code at target/compiled/alpha_fund/models/gold/gold_trade_volume.sql
+[0m21:55:57.571623 [info ] [MainThread]: 
+[0m21:55:57.571747 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=3 SKIP=0 NO-OP=0 TOTAL=5
+[0m21:55:57.573725 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.0727557, "process_in_blocks": "0", "process_kernel_time": 0.170486, "process_mem_max_rss": "158482432", "process_out_blocks": "0", "process_user_time": 1.423822}
+[0m21:55:57.573900 [debug] [MainThread]: Command `dbt run` failed at 21:55:57.573869 after 1.07 seconds
+[0m21:55:57.574068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103daa710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1004c4e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x101ee8bd0>]}
+[0m21:55:57.574217 [debug] [MainThread]: Flushing usage events
+[0m21:56:02.780286 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:58:37.651441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cdc1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106dd5590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106dd5c10>]}
+
+
+============================== 21:58:37.653976 | 95c5ea02-f4f1-4d08-b64d-90acdeb26b2a ==============================
+[0m21:58:37.653976 [info ] [MainThread]: Running with dbt=1.11.9
+[0m21:58:37.654244 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --select gold', 'profiles_dir': '/Users/hemanth/.dbt', 'introspect': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'log_cache_events': 'False', 'log_path': '/Users/hemanth/Desktop/alpha-fund-pipeline/dbt/logs', 'quiet': 'False', 'empty': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'write_json': 'True', 'partial_parse': 'True', 'use_colors': 'True', 'version_check': 'True', 'debug': 'False', 'warn_error': 'None', 'target_path': 'None', 'cache_selected_only': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True'}
+[0m21:58:37.809737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e35850>]}
+[0m21:58:37.831842 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1040744d0>]}
+[0m21:58:37.832996 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m21:58:37.884434 [debug] [MainThread]: checksum: f8bb6a62265c70f2530bed05e52c2cee1c1844b101d398a67d5798350ab914c5, vars: {}, profile: , target: , version: 1.11.9
+[0m21:58:37.927036 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m21:58:37.927316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105eceb10>]}
+[0m21:58:38.477163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ed5d50>]}
+[0m21:58:38.514942 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/manifest.json
+[0m21:58:38.516211 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/semantic_manifest.json
+[0m21:58:38.522580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107643610>]}
+[0m21:58:38.522819 [info ] [MainThread]: Found 5 models, 4 data tests, 1 source, 477 macros
+[0m21:58:38.522977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050ed750>]}
+[0m21:58:38.523678 [info ] [MainThread]: 
+[0m21:58:38.523827 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:58:38.523945 [info ] [MainThread]: 
+[0m21:58:38.524144 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:58:38.526098 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_alpha_fund'
+[0m21:58:38.586546 [debug] [ThreadPool]: Using duckdb connection "list_alpha_fund"
+[0m21:58:38.586772 [debug] [ThreadPool]: On list_alpha_fund: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "list_alpha_fund"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"alpha_fund"'
+    
+  
+  
+[0m21:58:38.586906 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:58:39.589606 [debug] [ThreadPool]: SQL status: OK in 1.003 seconds
+[0m21:58:39.590297 [debug] [ThreadPool]: On list_alpha_fund: Close
+[0m21:58:39.590607 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_alpha_fund, now create_alpha_fund_main)
+[0m21:58:39.590795 [debug] [ThreadPool]: Creating schema "database: "alpha_fund"
+schema: "main"
+"
+[0m21:58:39.593715 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:58:39.593859 [debug] [ThreadPool]: On create_alpha_fund_main: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "create_alpha_fund_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='alpha_fund'
+        and type='sqlite'
+    
+  
+[0m21:58:39.593979 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:58:39.595043 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:58:39.595610 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:58:39.595744 [debug] [ThreadPool]: On create_alpha_fund_main: BEGIN
+[0m21:58:39.595940 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:58:39.596057 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:58:39.596173 [debug] [ThreadPool]: On create_alpha_fund_main: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "create_alpha_fund_main"} */
+
+    
+    
+        create schema if not exists "alpha_fund"."main"
+    
+[0m21:58:39.596371 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:58:39.596667 [debug] [ThreadPool]: On create_alpha_fund_main: COMMIT
+[0m21:58:39.596788 [debug] [ThreadPool]: Using duckdb connection "create_alpha_fund_main"
+[0m21:58:39.596898 [debug] [ThreadPool]: On create_alpha_fund_main: COMMIT
+[0m21:58:39.597060 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:58:39.597173 [debug] [ThreadPool]: On create_alpha_fund_main: Close
+[0m21:58:39.597730 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_alpha_fund_main, now list_alpha_fund_main)
+[0m21:58:39.600131 [debug] [ThreadPool]: Using duckdb connection "list_alpha_fund_main"
+[0m21:58:39.600255 [debug] [ThreadPool]: On list_alpha_fund_main: BEGIN
+[0m21:58:39.600359 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:58:39.600547 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:58:39.600659 [debug] [ThreadPool]: Using duckdb connection "list_alpha_fund_main"
+[0m21:58:39.600783 [debug] [ThreadPool]: On list_alpha_fund_main: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "connection_name": "list_alpha_fund_main"} */
+select
+      'alpha_fund' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'alpha_fund'
+  
+[0m21:58:39.602662 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m21:58:39.603156 [debug] [ThreadPool]: On list_alpha_fund_main: ROLLBACK
+[0m21:58:39.603699 [debug] [ThreadPool]: Failed to rollback 'list_alpha_fund_main'
+[0m21:58:39.603807 [debug] [ThreadPool]: On list_alpha_fund_main: Close
+[0m21:58:39.604139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107758ed0>]}
+[0m21:58:39.604328 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:58:39.604435 [debug] [MainThread]: On master: BEGIN
+[0m21:58:39.604533 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:58:39.604723 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:58:39.604827 [debug] [MainThread]: On master: COMMIT
+[0m21:58:39.604929 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:58:39.605029 [debug] [MainThread]: On master: COMMIT
+[0m21:58:39.605177 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:58:39.605287 [debug] [MainThread]: On master: Close
+[0m21:58:39.606428 [debug] [Thread-1 (]: Began running node model.alpha_fund.gold_fraud_signals
+[0m21:58:39.606627 [info ] [Thread-1 (]: 1 of 3 START sql table model main.gold_fraud_signals ........................... [RUN]
+[0m21:58:39.606800 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_alpha_fund_main, now model.alpha_fund.gold_fraud_signals)
+[0m21:58:39.606943 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.gold_fraud_signals
+[0m21:58:39.610154 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.gold_fraud_signals"
+[0m21:58:39.610437 [debug] [Thread-1 (]: Began executing node model.alpha_fund.gold_fraud_signals
+[0m21:58:39.624400 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.gold_fraud_signals"
+[0m21:58:39.625007 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_fraud_signals"
+[0m21:58:39.625170 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: BEGIN
+[0m21:58:39.625309 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:58:39.625629 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.625767 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_fraud_signals"
+[0m21:58:39.625927 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_fraud_signals"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_fraud_signals__dbt_tmp"
+  
+    as (
+      -- Gold table 2: Fraud signals feed
+-- All high risk trades for the risk team
+-- Refreshed hourly -- SLA: risk team investigates within 2 hours
+
+SELECT
+    trade_id,
+    fund_id,
+    ticker,
+    action,
+    shares,
+    price_per_share,
+    total_value,
+    trader_id,
+    broker,
+    execution_time,
+    fraud_score,
+    fraud_flag,
+    risk_category,
+    CASE
+        WHEN fraud_score >= 90 THEN 'CRITICAL'
+        WHEN fraud_score >= 75 THEN 'HIGH'
+        WHEN fraud_score >= 40 THEN 'MEDIUM'
+        ELSE 'LOW'
+    END                           AS alert_level,
+    CURRENT_TIMESTAMP             AS flagged_at
+FROM "alpha_fund"."silver"."trades"
+WHERE fraud_score >= 40
+ORDER BY fraud_score DESC
+    );
+  
+  
+[0m21:58:39.635275 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m21:58:39.637861 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_fraud_signals"
+[0m21:58:39.638024 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_fraud_signals"} */
+alter table "alpha_fund"."main"."gold_fraud_signals__dbt_tmp" rename to "gold_fraud_signals"
+[0m21:58:39.638585 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.644428 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: COMMIT
+[0m21:58:39.644576 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_fraud_signals"
+[0m21:58:39.644709 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: COMMIT
+[0m21:58:39.645621 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:58:39.648349 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_fraud_signals"
+[0m21:58:39.648508 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_fraud_signals"} */
+
+      drop table if exists "alpha_fund"."main"."gold_fraud_signals__dbt_backup" cascade
+    
+[0m21:58:39.648744 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.649756 [debug] [Thread-1 (]: On model.alpha_fund.gold_fraud_signals: Close
+[0m21:58:39.651030 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076b3150>]}
+[0m21:58:39.651308 [info ] [Thread-1 (]: 1 of 3 OK created sql table model main.gold_fraud_signals ...................... [[32mOK[0m in 0.04s]
+[0m21:58:39.651532 [debug] [Thread-1 (]: Finished running node model.alpha_fund.gold_fraud_signals
+[0m21:58:39.651691 [debug] [Thread-1 (]: Began running node model.alpha_fund.gold_portfolio_summary
+[0m21:58:39.651894 [info ] [Thread-1 (]: 2 of 3 START sql table model main.gold_portfolio_summary ....................... [RUN]
+[0m21:58:39.652063 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.alpha_fund.gold_fraud_signals, now model.alpha_fund.gold_portfolio_summary)
+[0m21:58:39.652206 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.gold_portfolio_summary
+[0m21:58:39.653337 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.gold_portfolio_summary"
+[0m21:58:39.653589 [debug] [Thread-1 (]: Began executing node model.alpha_fund.gold_portfolio_summary
+[0m21:58:39.654902 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.gold_portfolio_summary"
+[0m21:58:39.655142 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_portfolio_summary"
+[0m21:58:39.655280 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: BEGIN
+[0m21:58:39.655409 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:58:39.655634 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.655767 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_portfolio_summary"
+[0m21:58:39.655931 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_portfolio_summary"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_portfolio_summary__dbt_tmp"
+  
+    as (
+      -- Gold table 1: Portfolio summary
+-- Shows daily portfolio value, AUM, and concentration per stock
+-- Finance team queries this every morning for NAV calculation
+
+SELECT
+    fund_id,
+    fund_name,
+    ticker,
+    action,
+    COUNT(*)                          AS total_trades,
+    SUM(shares)                       AS total_shares,
+    AVG(price_per_share)              AS avg_price,
+    SUM(total_value)                  AS total_value,
+    SUM(SUM(total_value)) OVER ()     AS total_aum,
+    ROUND(
+        SUM(total_value) * 100.0 /
+        SUM(SUM(total_value)) OVER (), 2
+    )                                 AS concentration_pct,
+    CASE
+        WHEN ROUND(
+            SUM(total_value) * 100.0 /
+            SUM(SUM(total_value)) OVER (), 2
+        ) >= 8 THEN 'APPROACHING LIMIT'
+        ELSE 'WITHIN LIMIT'
+    END                               AS regulatory_status,
+    CURRENT_TIMESTAMP                 AS calculated_at
+FROM "alpha_fund"."silver"."trades"
+GROUP BY fund_id, fund_name, ticker, action
+ORDER BY total_value DESC
+    );
+  
+  
+[0m21:58:39.661146 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m21:58:39.662587 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_portfolio_summary"
+[0m21:58:39.662765 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_portfolio_summary"} */
+alter table "alpha_fund"."main"."gold_portfolio_summary__dbt_tmp" rename to "gold_portfolio_summary"
+[0m21:58:39.663059 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.663675 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: COMMIT
+[0m21:58:39.663820 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_portfolio_summary"
+[0m21:58:39.663959 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: COMMIT
+[0m21:58:39.664304 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.665272 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_portfolio_summary"
+[0m21:58:39.665414 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_portfolio_summary"} */
+
+      drop table if exists "alpha_fund"."main"."gold_portfolio_summary__dbt_backup" cascade
+    
+[0m21:58:39.665690 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.666412 [debug] [Thread-1 (]: On model.alpha_fund.gold_portfolio_summary: Close
+[0m21:58:39.666687 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c3d990>]}
+[0m21:58:39.666963 [info ] [Thread-1 (]: 2 of 3 OK created sql table model main.gold_portfolio_summary .................. [[32mOK[0m in 0.01s]
+[0m21:58:39.667182 [debug] [Thread-1 (]: Finished running node model.alpha_fund.gold_portfolio_summary
+[0m21:58:39.667338 [debug] [Thread-1 (]: Began running node model.alpha_fund.gold_trade_volume
+[0m21:58:39.667540 [info ] [Thread-1 (]: 3 of 3 START sql table model main.gold_trade_volume ............................ [RUN]
+[0m21:58:39.667706 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.alpha_fund.gold_portfolio_summary, now model.alpha_fund.gold_trade_volume)
+[0m21:58:39.667848 [debug] [Thread-1 (]: Began compiling node model.alpha_fund.gold_trade_volume
+[0m21:58:39.669129 [debug] [Thread-1 (]: Writing injected SQL for node "model.alpha_fund.gold_trade_volume"
+[0m21:58:39.669421 [debug] [Thread-1 (]: Began executing node model.alpha_fund.gold_trade_volume
+[0m21:58:39.670746 [debug] [Thread-1 (]: Writing runtime sql for node "model.alpha_fund.gold_trade_volume"
+[0m21:58:39.671008 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_trade_volume"
+[0m21:58:39.671142 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: BEGIN
+[0m21:58:39.671269 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:58:39.671544 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.671676 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_trade_volume"
+[0m21:58:39.671833 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_trade_volume"} */
+
+  
+    
+    
+
+    create  table
+      "alpha_fund"."main"."gold_trade_volume__dbt_tmp"
+  
+    as (
+      -- Gold table 3: Daily trade volume by ticker
+-- Used by fund manager and BA for portfolio analysis
+
+SELECT
+    ticker,
+    action,
+    COUNT(*)                AS trade_count,
+    SUM(shares)             AS total_shares,
+    SUM(total_value)        AS total_value,
+    AVG(price_per_share)    AS avg_price,
+    MIN(price_per_share)    AS min_price,
+    MAX(price_per_share)    AS max_price,
+    SUM(CASE WHEN action = 'BUY'
+        THEN total_value ELSE 0 END)  AS buy_value,
+    SUM(CASE WHEN action = 'SELL'
+        THEN total_value ELSE 0 END)  AS sell_value,
+    CURRENT_TIMESTAMP       AS calculated_at
+FROM "alpha_fund"."silver"."trades"
+GROUP BY ticker, action
+ORDER BY total_value DESC
+    );
+  
+  
+[0m21:58:39.675715 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m21:58:39.677093 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_trade_volume"
+[0m21:58:39.677257 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_trade_volume"} */
+alter table "alpha_fund"."main"."gold_trade_volume__dbt_tmp" rename to "gold_trade_volume"
+[0m21:58:39.677581 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.678219 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: COMMIT
+[0m21:58:39.678359 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_trade_volume"
+[0m21:58:39.678485 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: COMMIT
+[0m21:58:39.678822 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.680043 [debug] [Thread-1 (]: Using duckdb connection "model.alpha_fund.gold_trade_volume"
+[0m21:58:39.680212 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "alpha_fund", "target_name": "dev", "node_id": "model.alpha_fund.gold_trade_volume"} */
+
+      drop table if exists "alpha_fund"."main"."gold_trade_volume__dbt_backup" cascade
+    
+[0m21:58:39.680492 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:58:39.680999 [debug] [Thread-1 (]: On model.alpha_fund.gold_trade_volume: Close
+[0m21:58:39.681230 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '95c5ea02-f4f1-4d08-b64d-90acdeb26b2a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107926190>]}
+[0m21:58:39.681476 [info ] [Thread-1 (]: 3 of 3 OK created sql table model main.gold_trade_volume ....................... [[32mOK[0m in 0.01s]
+[0m21:58:39.681699 [debug] [Thread-1 (]: Finished running node model.alpha_fund.gold_trade_volume
+[0m21:58:39.682180 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:58:39.682322 [debug] [MainThread]: On master: BEGIN
+[0m21:58:39.682436 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:58:39.682647 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:58:39.682764 [debug] [MainThread]: On master: COMMIT
+[0m21:58:39.682879 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:58:39.682986 [debug] [MainThread]: On master: COMMIT
+[0m21:58:39.683136 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:58:39.683252 [debug] [MainThread]: On master: Close
+[0m21:58:39.683397 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:58:39.683504 [debug] [MainThread]: Connection 'model.alpha_fund.gold_trade_volume' was properly closed.
+[0m21:58:39.683651 [info ] [MainThread]: 
+[0m21:58:39.683779 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 1.16 seconds (1.16s).
+[0m21:58:39.684126 [debug] [MainThread]: Command end result
+[0m21:58:39.698817 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/manifest.json
+[0m21:58:39.699678 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/semantic_manifest.json
+[0m21:58:39.702155 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/hemanth/Desktop/alpha-fund-pipeline/dbt/target/run_results.json
+[0m21:58:39.702286 [info ] [MainThread]: 
+[0m21:58:39.702445 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:58:39.702571 [info ] [MainThread]: 
+[0m21:58:39.702704 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m21:58:39.704913 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.0855405, "process_in_blocks": "0", "process_kernel_time": 0.192488, "process_mem_max_rss": "200212480", "process_out_blocks": "0", "process_user_time": 1.517356}
+[0m21:58:39.705161 [debug] [MainThread]: Command `dbt run` succeeded at 21:58:39.705125 after 2.09 seconds
+[0m21:58:39.705335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102402e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10256cfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1024ace50>]}
+[0m21:58:39.705497 [debug] [MainThread]: Flushing usage events
+[0m21:58:40.482653 [debug] [MainThread]: An error was encountered while trying to flush usage events

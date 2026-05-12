@@ -1,0 +1,17 @@
+name: 'alpha_fund'
+version: '1.0.0'
+config-version: 2
+
+profile: 'alpha_fund'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+models:
+  alpha_fund:
+    gold:
+      +materialized: table
